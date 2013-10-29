@@ -80,12 +80,12 @@ StampDispenser::~StampDispenser() {
 // Complexity: O(N^2)
 int StampDispenser::CalcNumStampsToFillRequest(int request) {
 	// Take care of the special cases
-	if(request < 0)			return -1;
-	else if(request == 0)	return 0;
+	if(request < 0)          return -1;
+	else if(request == 0)    return 0;
 
 	int numStamps = 0,
-		tempStamps,
-		tempRequest;
+	    tempStamps,
+	    tempRequest;
 
 	// get the smallest number of stamps out of all subarrays
 	for (size_t i = 0; i < m_numStampDenominations - 4; i += 4) {
@@ -122,17 +122,17 @@ int main()
     StampDispenser stampDispenser(stampDenominations, 7);
     assert(stampDispenser.CalcNumStampsToFillRequest(18) == 3);
 
-	// Wrong input
-	assert(stampDispenser.CalcNumStampsToFillRequest(-10) == -1);
-	assert(stampDispenser.CalcNumStampsToFillRequest(-1) == -1);
-	assert(stampDispenser.CalcNumStampsToFillRequest(0) == 0);
+    // Wrong input
+    assert(stampDispenser.CalcNumStampsToFillRequest(-10) == -1);
+    assert(stampDispenser.CalcNumStampsToFillRequest(-1) == -1);
+    assert(stampDispenser.CalcNumStampsToFillRequest(0) == 0);
 
-	// Additional tests
-	assert(stampDispenser.CalcNumStampsToFillRequest(1) == 1);
-	assert(stampDispenser.CalcNumStampsToFillRequest(2) == 1);
-	assert(stampDispenser.CalcNumStampsToFillRequest(5) == 3);
-	assert(stampDispenser.CalcNumStampsToFillRequest(34) == 2);
-	assert(stampDispenser.CalcNumStampsToFillRequest(72) == 3);
+    // Additional tests
+    assert(stampDispenser.CalcNumStampsToFillRequest(1) == 1);
+    assert(stampDispenser.CalcNumStampsToFillRequest(2) == 1);
+    assert(stampDispenser.CalcNumStampsToFillRequest(5) == 3);
+    assert(stampDispenser.CalcNumStampsToFillRequest(34) == 2);
+    assert(stampDispenser.CalcNumStampsToFillRequest(72) == 3);
 
     return 0;
 }
